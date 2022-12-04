@@ -1,5 +1,5 @@
 
-My solutions (both Python, Rust and Kotlin) for [Advent of Code 2021](https://adventofcode.com/2021/about).
+My solutions (both Python and Rust) for [Advent of Code 2022](https://adventofcode.com/2022/about).
 
 ### Rules this year
 * Don't rush the leaderboard, starting time doesn't matter
@@ -20,9 +20,4 @@ Python:
 $ cd python && ./run.sh
 ```
 
-Kotlin:
-```
-$ cd kotlin && ./run.sh
-```
-
-There are also corresponding Jupyter notebooks for both Python, Rust and Kotlin.
+There are also corresponding Jupyter notebooks for both Python and Rust.
