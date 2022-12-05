@@ -2,6 +2,7 @@ def halve(s):
     n = int(len(s) / 2)
     return [s[:n], s[n:]]
 
+
 def get_priority(c):
     n = ord(c)
     if n >= ord('a') and n <= ord('z'):
@@ -11,8 +12,10 @@ def get_priority(c):
     else:
         return 0
 
+
 def get_matching(a, b):
     return set(a).intersection(set(b))
+
 
 def solution():
     lines = [s.strip() for s in open("../data/03.txt").readlines()]
@@ -22,7 +25,8 @@ def solution():
 
     res2 = 0
     for i in range(0, len(lines), 3):
-        matches = set(lines[i]).intersection(set(lines[i + 1])).intersection(set(lines[i + 2]))
+        matches = set(lines[i]).intersection(
+            set(lines[i + 1])).intersection(set(lines[i + 2]))
         res2 += sum(get_priority(x) for x in matches)
 
     print(f'Answer 1: {res1}\nAnswer 2: {res2}')
