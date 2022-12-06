@@ -80,6 +80,7 @@ fn parse_crates(lines: &Vec<&str>) -> CratesField {
         tops: tops,
     }
 }
+
 pub(crate) fn solution() {
     let data = common::read_string(&common::data_file(5)).unwrap();
     let parts: Vec<Vec<&str>> = data
