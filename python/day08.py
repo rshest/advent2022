@@ -66,5 +66,6 @@ def solution():
     visible = compute_visible(rows)
     res1 = sum(sum(c > 0 for c in row) for row in visible)
 
-    res2 = max(max(get_score(rows, (x, y)) for y in range(h)) for x in range(w))
+    res2 = max(max(get_score(rows, (x, y)) for y in range(h))
+               for x in range(w))
     print(f"Answer 1: {res1}\nAnswer 2: {res2}")

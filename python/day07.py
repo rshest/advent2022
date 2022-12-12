@@ -1,6 +1,7 @@
 # DAY07
 import sys
 
+
 class Node:
     def __init__(self, is_directory=True, size=0):
         self.children = {}
@@ -15,6 +16,7 @@ class Node:
             size = sum(ch.compute_size() for ch in self.children.values())
         self.size = size
         return size
+
 
 def process_commands(lines):
     root = Node()
@@ -44,6 +46,7 @@ def process_commands(lines):
     root.compute_size()
     return root
 
+
 def get_sum_at_most(node, n):
     if not node.is_directory:
         return 0
@@ -52,6 +55,7 @@ def get_sum_at_most(node, n):
         res += node.size
     return res + sum(get_sum_at_most(ch, n) for ch in node.children.values())
 
+
 def get_min_to_delete(node, to_free):
     res = sys.maxsize
     if not node.is_directory:
@@ -59,6 +63,7 @@ def get_min_to_delete(node, to_free):
     if node.size >= to_free:
         res = node.size
     return min(res, min(get_min_to_delete(ch, to_free) for ch in node.children.values()))
+
 
 def solution():
     lines = [s.strip() for s in open("../data/07.txt").readlines()]

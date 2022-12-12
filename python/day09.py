@@ -1,12 +1,15 @@
 # DAY09
 import math
 
+
 def parse_move(line):
     parts = line.split(" ")
     return (parts[0], int(parts[1]))
 
+
 def sign(a):
     return (a > 0) - (a < 0)
+
 
 def get_tail_pos(ph, pt):
     xh, yh = ph
@@ -20,12 +23,14 @@ def get_tail_pos(ph, pt):
         dy = sign(dy) * math.floor(abs(dy) / 2)
     return (xt + dx, yt + dy)
 
+
 DIRS = {
-'R': (1, 0),
-'U': (0, 1),
-'L': (-1, 0),
-'D': (0, -1),
+    'R': (1, 0),
+    'U': (0, 1),
+    'L': (-1, 0),
+    'D': (0, -1),
 }
+
 
 def eval_tail_pos(moves, n):
     pos = [(0, 0) for _ in range(n)]
@@ -43,10 +48,11 @@ def eval_tail_pos(moves, n):
             tpos.add(pos[-1])
     return tpos
 
+
 def solution():
     moves = [parse_move(s) for s in open("../data/09.txt").readlines()]
 
-    res1=len(eval_tail_pos(moves, 2))
-    res2=len(eval_tail_pos(moves, 10))
+    res1 = len(eval_tail_pos(moves, 2))
+    res2 = len(eval_tail_pos(moves, 10))
 
     print(f'Answer 1: {res1}\nAnswer 2: {res2}')
