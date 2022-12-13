@@ -12,6 +12,7 @@ import day09
 import day10
 import day11
 import day12
+import day13
 
 SOLUTIONS = [
     day01.solution,
@@ -26,6 +27,7 @@ SOLUTIONS = [
     day10.solution,
     day11.solution,
     day12.solution,
+    day13.solution,
 ]
 
 
